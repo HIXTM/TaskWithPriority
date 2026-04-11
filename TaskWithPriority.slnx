@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="TaskWithPriority/TaskWithPriority.csproj" />
+  <Project Path="TaskWithPriority/TaskWithPriority.csproj" Id="fe40ce9f-8f40-40d8-aa1e-a38e090554d8" />
+  <Project Path="UnitTests/UnitTests.csproj" Id="bb746696-4b33-4c4b-b73d-8dba7b3467ce" />
 </Solution>
