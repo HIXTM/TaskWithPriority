@@ -257,5 +257,13 @@ namespace TaskManager.Tests
             Assert.IsNotNull(tasks);
             Assert.AreEqual(1, tasks.Count);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Constructor_ThrowsArgumentException()
+        {
+            // Act
+            new TaskWithPriorityy("", Priority.Низкий, DateTime.Now);
+        }
     }
 }

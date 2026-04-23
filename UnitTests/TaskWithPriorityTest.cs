@@ -185,29 +185,14 @@ namespace TaskManager.Tests
         }
 
         [TestMethod]
-        public void Description_AllowsNull()
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void AddTask_ThrowsArgumentNullException()
         {
             // Arrange
-            var task = new TaskWithPriorityy("Описание", Priority.Низкий, DateTime.Now);
+            var manager = new TaskManagerWithPriority();
 
             // Act
-            task.Description = null;
-
-            // Assert
-            Assert.IsNull(task.Description);
-        }
-
-        [TestMethod]
-        public void Description_AllowsEmpty()
-        {
-            // Arrange
-            var task = new TaskWithPriorityy("Описание", Priority.Низкий, DateTime.Now);
-
-            // Act
-            task.Description = "";
-
-            // Assert
-            Assert.AreEqual("", task.Description);
+            manager.AddTask(null);
         }
     }
 }
