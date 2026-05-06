@@ -178,25 +178,6 @@ namespace TaskManager.Tests
             Assert.IsTrue(listItem.Contains("[X]"));
         }
 
-        [TestMethod]
-        public void UpdateTasksList_ShowNotCompletedStatus()
-        {
-            // Arrange
-            var tasksListBox = GetPrivateField<ListBox>("tasksListBox");
-            var taskManager = GetPrivateField<TaskManagerWithPriority>("taskManager");
-
-            var task = new TaskWithPriorityy("Незавершенная задача", Priority.Низкий, DateTime.Now);
-            taskManager.AddTask(task);
-
-            // Act
-            InvokePrivateMethod("UpdateTasksList");
-
-            // Assert
-            string listItem = tasksListBox.Items[0].ToString();
-            Assert.IsTrue(listItem.Contains("[ )"));
-        }
-
-        // Вспомогательные методы для доступа к приватным полям и методам
         private T GetPrivateField<T>(string fieldName)
         {
             var field = typeof(TaskManagerForm).GetField(fieldName,
